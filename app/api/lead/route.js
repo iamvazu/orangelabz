@@ -28,6 +28,7 @@ export async function POST(req) {
     const adminMailOptions = {
       from: `"Orange Labz Leads" <${process.env.SMTP_USER || "mail@orangelabz.com"}>`,
       to: "hello@orangelabz.com",
+      cc: "rajesh@orangelabz.com",
       subject: `New Lead Alert: ${name} (${company || "No Company"})`,
       text: `You have received a new contact form submission on Orange Labz:
 
