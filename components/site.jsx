@@ -5,9 +5,8 @@ import {
   ArrowRight, MessageCircle, ShieldCheck, Cpu, Activity, PhoneIncoming,
 } from "lucide-react";
 
-// TODO before launch: replace with your real WhatsApp Business number
 export const WA =
-  "https://wa.me/919845240499?text=Hi%20Orange%20Labz%2C%20I%20want%20a%20free%20AI%20audit";
+  "https://wa.me/917483576808?text=Hi%20Orange%20Labz%2C%20I%20want%20a%20free%20AI%20audit";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -102,19 +101,26 @@ export function Footer() {
             <Link href="/ai-commerce">AI Commerce</Link>
           </div>
           <div>
-            <h4>Industries</h4>
+            <h4>Solutions</h4>
+            <Link href="/solutions">All Solutions</Link>
             <Link href="/industries/real-estate">Real Estate</Link>
             <Link href="/industries#clinics">Premium Clinics</Link>
             <Link href="/industries#edtech">Test Prep &amp; Ed</Link>
             <Link href="/industries#industrial">B2B Industrial</Link>
-            <Link href="/industries#auto">Automotive</Link>
           </div>
           <div>
             <h4>Company</h4>
             <Link href="/about">About</Link>
+            <Link href="/blog">Blog</Link>
             <Link href="/pricing">Pricing</Link>
             <Link href="/jugaad-ai">Jugaad AI</Link>
             <Link href="/contact">Contact</Link>
+          </div>
+          <div>
+            <h4>Get in touch</h4>
+            <a href="mailto:hello@orangelabz.com">hello@orangelabz.com</a>
+            <a href="tel:+917483576808">+91 7483 576 808</a>
+            <a href="https://wa.me/917483576808?text=Hi%20Orange%20Labz%2C%20I%20want%20a%20free%20AI%20audit">WhatsApp</a>
           </div>
         </div>
         <div className="fbase" style={{ display: "block", textAlign: "left" }}>
