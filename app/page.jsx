@@ -48,9 +48,8 @@ export default function Home() {
           </div>
           <Feed />
         </div>
+        <Marquee />
       </header>
-
-      <Marquee />
 
       {/* DUAL PATH */}
       <section>
