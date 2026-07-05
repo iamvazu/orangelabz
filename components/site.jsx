@@ -46,6 +46,8 @@ export function Nav() {
             <img
               src="/logo-orangelabz-dark-01.png"
               alt="Orange Labz"
+              width={241}
+              height={101}
               onError={() => setImgFailed(true)}
             />
           ) : (
@@ -80,6 +82,8 @@ export function Footer() {
                 <img
                   src="/logo-orangelabz-dark-01.png"
                   alt="Orange Labz"
+                  width={241}
+                  height={101}
                   style={{ height: "48px", width: "auto" }}
                   onError={() => setImgFailed(true)}
                 />
@@ -93,7 +97,7 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h4>Services</h4>
+            <div className="fgrid-title">Services</div>
             <Link href="/ai-agents">AI Agents</Link>
             <Link href="/ai-implementation">AI Implementation</Link>
             <Link href="/engineering">Engineering &amp; Automation</Link>
@@ -101,7 +105,7 @@ export function Footer() {
             <Link href="/ai-commerce">AI Commerce</Link>
           </div>
           <div>
-            <h4>Solutions</h4>
+            <div className="fgrid-title">Solutions</div>
             <Link href="/solutions">All Solutions</Link>
             <Link href="/industries/real-estate">Real Estate</Link>
             <Link href="/industries#clinics">Premium Clinics</Link>
@@ -109,7 +113,7 @@ export function Footer() {
             <Link href="/industries#industrial">B2B Industrial</Link>
           </div>
           <div>
-            <h4>Company</h4>
+            <div className="fgrid-title">Company</div>
             <Link href="/about">About</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/pricing">Pricing</Link>
@@ -117,7 +121,7 @@ export function Footer() {
             <Link href="/contact">Contact</Link>
           </div>
           <div>
-            <h4>Get in touch</h4>
+            <div className="fgrid-title">Get in touch</div>
             <a href="mailto:hello@orangelabz.com">hello@orangelabz.com</a>
             <a href="tel:+917483576808">+91 7483 576 808</a>
             <a href="https://wa.me/917483576808?text=Hi%20Orange%20Labz%2C%20I%20want%20a%20free%20AI%20audit">WhatsApp</a>
@@ -294,17 +298,25 @@ export function ROI() {
       <div>
         <div className="eyebrow">The missed-call math</div>
         <h2 style={{ margin: "10px 0 18px" }}>What are unanswered calls costing you?</h2>
-        <div className="field"><label>Monthly inbound enquiries (calls + WhatsApp)</label>
-          <input type="number" value={enq} onChange={(e) => setEnq(+e.target.value || 0)} /></div>
-        <div className="field"><label>% currently missed or answered late</label>
-          <input type="number" value={missed} onChange={(e) => setMissed(+e.target.value || 0)} /></div>
-        <div className="field"><label>% of answered enquiries that book a visit / consult</label>
-          <input type="number" value={visitRate} onChange={(e) => setVisitRate(+e.target.value || 0)} /></div>
-        <div className="field"><label>% of visits that close · revenue per deal (₹)</label>
+        <div className="field">
+          <label htmlFor="roi-enq">Monthly inbound enquiries (calls + WhatsApp)</label>
+          <input id="roi-enq" type="number" value={enq} onChange={(e) => setEnq(+e.target.value || 0)} />
+        </div>
+        <div className="field">
+          <label htmlFor="roi-missed">% currently missed or answered late</label>
+          <input id="roi-missed" type="number" value={missed} onChange={(e) => setMissed(+e.target.value || 0)} />
+        </div>
+        <div className="field">
+          <label htmlFor="roi-visit-rate">% of answered enquiries that book a visit / consult</label>
+          <input id="roi-visit-rate" type="number" value={visitRate} onChange={(e) => setVisitRate(+e.target.value || 0)} />
+        </div>
+        <div className="field">
+          <label htmlFor="roi-close-rate">% of visits that close · revenue per deal (₹)</label>
           <div style={{ display: "flex", gap: 10 }}>
-            <input type="number" value={closeRate} onChange={(e) => setCloseRate(+e.target.value || 0)} />
-            <input type="number" value={value} onChange={(e) => setValue(+e.target.value || 0)} />
-          </div></div>
+            <input id="roi-close-rate" type="number" value={closeRate} onChange={(e) => setCloseRate(+e.target.value || 0)} />
+            <input id="roi-value" aria-label="Revenue per closed deal in Rupees" type="number" value={value} onChange={(e) => setValue(+e.target.value || 0)} />
+          </div>
+        </div>
         <p className="mut" style={{ fontSize: 12 }}>
           Assumes the agent captures 85% of currently-missed enquiries. Conservative — it answers 24/7.
         </p>

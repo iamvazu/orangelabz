@@ -1,0 +1,24 @@
+# Orange Labz
+
+Orange Labz is an AI implementation firm based in Bengaluru, India. We build and deploy inbound-first AI agents (voice, WhatsApp, SMS, email) on client-owned, single-tenant AWS infrastructure.
+
+## Core Services
+- **AI Agents**: Voice, WhatsApp, SMS, and email qualification and booking agents.
+- **AI Implementation**: Hand-crafted custom AI system architecture and integrations.
+- **Engineering & Automation**: Custom CRM database integrations, notification triggers, and custom developer frameworks.
+- **AI Visibility**: Optimization of website structure and indexes to maximize visibility on AI Search Engines (AEO, GEO, and SEO).
+- **AI Commerce**: Transactional qualifications and qualification logic for premium e-commerce services.
+
+## Directory / Main Pages
+- [Homepage](https://orangelabz.com/) - Overview of services, live tracker dashboard, and interactive ROI calculator.
+- [AI Agents](https://orangelabz.com/ai-agents) - Details about our inbound-first voice and message qualifications agents.
+- [AI Implementation](https://orangelabz.com/ai-implementation) - Our custom model engineering services.
+- [Engineering](https://orangelabz.com/engineering) - Custom developer operations and database pipelines.
+- [AI Visibility](https://orangelabz.com/ai-visibility) - Optimization for modern LLM searches and GEO.
+- [AI Commerce](https://orangelabz.com/ai-commerce) - Transactional qualification.
+- [Pricing](https://orangelabz.com/pricing) - Our productized pilots and custom enterprise solutions.
+- [Jugaad AI](https://orangelabz.com/jugaad-ai) - SMB productized package overview.
+- [Solutions](https://orangelabz.com/solutions) - Case studies and verticals map.
+- [About](https://orangelabz.com/about) - Agency background and core engineering values.
+- [Contact](https://orangelabz.com/contact) - Contact form to request a free 45-minute AI Audit.
+- [Blog](https://orangelabz.com/blog) - Technical articles on agent design patterns, DPDP act compliance, and local deployment options.

@@ -2,6 +2,29 @@ import "./globals.css";
 import { Nav, Footer } from "@/components/site";
 import MotionObserver from "@/components/motion";
 import { Analytics } from "@vercel/analytics/next";
+import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL("https://orangelabz.com"),
@@ -30,7 +53,7 @@ const orgSchema = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
       <body>
         <MotionObserver />
         <script type="application/ld+json"
