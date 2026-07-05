@@ -38,7 +38,7 @@ export function Footer() {
         <div className="fgrid">
           <div>
             <Link className="brand" href="/" style={{ marginBottom: 12 }}>
-              <img src="/logo-orangelabz-dark-01.png" alt="Orange Labz" style={{ height: "38px", width: "auto" }} />
+              <img src="/logo-orangelabz-dark-01.png" alt="Orange Labz" style={{ height: "48px", width: "auto" }} />
             </Link>
             <p style={{ maxWidth: "32ch", fontSize: 13.5 }}>
               AI implementation firm. Inbound-first agents, client-owned
@@ -69,9 +69,14 @@ export function Footer() {
             <Link href="/contact">Contact</Link>
           </div>
         </div>
-        <div className="fbase">
-          <span>© 2026 Orange Labz · Jugaad AI is an Orange Labz product</span>
-          <span className="mono">TRAI-aware · DPDP compliant · AWS Mumbai · built on hardened open-source agent infrastructure</span>
+        <div className="fbase" style={{ display: "block", textAlign: "left" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12, marginBottom: 8 }}>
+            <span>© 2026 Orange Labz · Jugaad AI is an Orange Labz product</span>
+            <span className="mono">TRAI-aware · DPDP compliant · AWS Mumbai · built on hardened open-source agent infrastructure</span>
+          </div>
+          <div style={{ fontSize: 12.5, color: "var(--fog)" }}>
+            Built in Bengaluru, India
+          </div>
         </div>
       </div>
     </footer>
