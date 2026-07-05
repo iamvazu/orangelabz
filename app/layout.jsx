@@ -12,6 +12,9 @@ export const metadata = {
   description:
     "Inbound-first AI agents that answer every call in one ring, qualify on WhatsApp, and book the meeting — on infrastructure you own. TRAI-aware, DPDP compliant. Bengaluru, India.",
   openGraph: { siteName: "Orange Labz", type: "website" },
+  icons: {
+    icon: "/favicon-svg.svg",
+  },
 };
 
 const orgSchema = {
