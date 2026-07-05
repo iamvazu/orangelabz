@@ -10,11 +10,48 @@ export const WA =
   "https://wa.me/919845240499?text=Hi%20Orange%20Labz%2C%20I%20want%20a%20free%20AI%20audit";
 
 export function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [imgFailed, setImgFailed] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // scrolled class toggling
+      if (currentScrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      // hide/show class toggling
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setHidden(true); // scrolling down
+      } else {
+        setHidden(false); // scrolling up
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="nav">
+    <nav className={`nav ${scrolled ? "scrolled" : ""} ${hidden ? "hide" : ""}`}>
       <div className="wrap">
         <Link className="brand" href="/">
-          <img src="/logo-orangelabz-dark-01.png" alt="Orange Labz" style={{ height: "38px", width: "auto" }} />
+          {!imgFailed ? (
+            <img
+              src="/logo-orangelabz-dark-01.png"
+              alt="Orange Labz"
+              onError={() => setImgFailed(true)}
+            />
+          ) : (
+            <span className="bt">Orange <i>Labz</i></span>
+          )}
         </Link>
         <div className="navlinks">
           <Link href="/ai-agents">AI Agents</Link>
@@ -32,13 +69,24 @@ export function Nav() {
 }
 
 export function Footer() {
+  const [imgFailed, setImgFailed] = useState(false);
+
   return (
     <footer>
       <div className="wrap">
         <div className="fgrid">
           <div>
             <Link className="brand" href="/" style={{ marginBottom: 12 }}>
-              <img src="/logo-orangelabz-dark-01.png" alt="Orange Labz" style={{ height: "48px", width: "auto" }} />
+              {!imgFailed ? (
+                <img
+                  src="/logo-orangelabz-dark-01.png"
+                  alt="Orange Labz"
+                  style={{ height: "48px", width: "auto" }}
+                  onError={() => setImgFailed(true)}
+                />
+              ) : (
+                <span className="bt" style={{ fontSize: "24px" }}>Orange <i>Labz</i></span>
+              )}
             </Link>
             <p style={{ maxWidth: "32ch", fontSize: 13.5 }}>
               AI implementation firm. Inbound-first agents, client-owned
@@ -95,20 +143,54 @@ const FEED = [
 ];
 
 export function Feed() {
-  const [rows, setRows] = useState(FEED.slice(0, 5));
-  const i = useRef(5);
+  const [rows, setRows] = useState(FEED.slice(0, 4));
+  const [typingText, setTypingText] = useState("");
+  const currentIndex = useRef(4);
+  const charIndex = useRef(0);
+
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const id = setInterval(() => {
-      setRows((r) => [...r.slice(1), FEED[i.current % FEED.length]]);
-      i.current++;
-    }, 1900);
-    return () => clearInterval(id);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    let typingInterval;
+    const startNextRow = () => {
+      const nextItem = FEED[currentIndex.current % FEED.length];
+      const fullText = `${nextItem[1]} ▸ ${nextItem[2]}`;
+      charIndex.current = 0;
+      setTypingText("");
+
+      typingInterval = setInterval(() => {
+        if (charIndex.current < fullText.length) {
+          setTypingText(fullText.substring(0, charIndex.current + 1));
+          charIndex.current++;
+        } else {
+          clearInterval(typingInterval);
+          // Append the completed row
+          setRows((prev) => {
+            const updated = [...prev, nextItem];
+            if (updated.length > 4) updated.shift();
+            return updated;
+          });
+          setTypingText("");
+          currentIndex.current++;
+          // Wait 2 seconds before starting the next row
+          setTimeout(startNextRow, 2000);
+        }
+      }, 40);
+    };
+
+    const initialTimeout = setTimeout(startNextRow, 1000);
+    return () => {
+      clearTimeout(initialTimeout);
+      clearInterval(typingInterval);
+    };
   }, []);
+
   return (
     <div className="feed">
       <div className="feed-top">
-        <span className="dot" /> agents · live · inbound watch&nbsp;
+        <span className="dot" /> agents · live · inbound watch
         <span style={{ marginLeft: "auto" }}>client-owned instance · AWS Mumbai</span>
       </div>
       <div className="feed-body">
@@ -119,6 +201,16 @@ export function Feed() {
             <span className="v">{r[3]}</span>
           </div>
         ))}
+        {typingText && (
+          <div className="frow" style={{ animation: "none" }}>
+            <span className="t">{FEED[currentIndex.current % FEED.length][0]}</span>
+            <span className="a">
+              {FEED[currentIndex.current % FEED.length][1]} <b>▸ {typingText}</b>
+              <span className="caret" />
+            </span>
+            <span className="v">{FEED[currentIndex.current % FEED.length][3]}</span>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -159,6 +251,38 @@ export function ROI() {
   const extraRev = extraDeals * value;
   const fmt = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
 
+  const [displayRev, setDisplayRev] = useState(extraRev);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplayRev(extraRev);
+      return;
+    }
+    let start = displayRev;
+    const end = extraRev;
+    if (start === end) return;
+
+    const duration = 800; // ms
+    const startTime = performance.now();
+
+    let animationFrameId;
+    const updateCounter = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out quad
+      const ease = progress * (2 - progress);
+      const current = start + (end - start) * ease;
+      setDisplayRev(current);
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(updateCounter);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(updateCounter);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [extraRev]);
+
   return (
     <div className="roi">
       <div>
@@ -181,7 +305,7 @@ export function ROI() {
       </div>
       <div className="result">
         <div className="mut" style={{ fontSize: 13 }}>Revenue recovered per month</div>
-        <div className="big">{fmt(extraRev)}</div>
+        <div className="big">{fmt(displayRev)}</div>
         <div className="line"><span>Missed enquiries captured</span><b>{Math.round(savedCalls)}</b></div>
         <div className="line"><span>Extra visits / consults booked</span><b>{Math.round(extraVisits)}</b></div>
         <div className="line" style={{ borderBottom: 0 }}>

@@ -18,17 +18,26 @@ export default function Home() {
       <header className="hero">
         <div className="wrap hero-grid">
           <div>
-            <div className="eyebrow">AI Implementation Firm · TRAI-aware · DPDP compliant · Bengaluru</div>
+            <div className="eyebrow fade-in" style={{ "--d": "150ms" }}>AI Implementation Firm · TRAI-aware · DPDP compliant · Bengaluru</div>
             <h1 style={{ margin: "16px 0" }}>
-              Every missed call is a lead you already <span>paid for.</span>
+              <span className="hw"><span style={{ "--d": "0ms" }}>Every</span></span>{" "}
+              <span className="hw"><span style={{ "--d": "100ms" }}>missed</span></span>{" "}
+              <span className="hw"><span style={{ "--d": "200ms" }}>call</span></span>{" "}
+              <span className="hw"><span style={{ "--d": "300ms" }}>is</span></span>{" "}
+              <span className="hw"><span style={{ "--d": "400ms" }}>a</span></span>{" "}
+              <span className="hw"><span style={{ "--d": "500ms" }}>lead</span></span>{" "}
+              <span className="hw"><span style={{ "--d": "600ms" }}>you</span></span>{" "}
+              <span className="hw"><span style={{ "--d": "700ms" }}>already</span></span>{" "}
+              <span className="hw"><span style={{ "--d": "800ms" }}><em>paid</em></span></span>{" "}
+              <span className="hw"><span style={{ "--d": "900ms" }}><em>for.</em></span></span>
             </h1>
-            <p className="lead">
+            <p className="lead fade-in" style={{ "--d": "1000ms" }}>
               Orange Labz deploys AI agents that answer every inbound call in one
               ring, qualify on WhatsApp, and book the meeting — 24/7, in the
               language your market speaks. Built on infrastructure you own. We
               make it work; you keep the system.
             </p>
-            <div className="cta-row">
+            <div className="cta-row fade-in" style={{ "--d": "1150ms" }}>
               <Link className="btn btn-primary" href="/contact">
                 Book a Free AI Audit <ArrowRight size={16} />
               </Link>

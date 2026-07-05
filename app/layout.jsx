@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Nav, Footer } from "@/components/site";
+import MotionObserver from "@/components/motion";
 
 export const metadata = {
   metadataBase: new URL("https://orangelabz.com"),
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <MotionObserver />
         <script type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
         <div className="veil">
