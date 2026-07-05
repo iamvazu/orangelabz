@@ -19,7 +19,7 @@ export default function Home() {
         <div className="wrap hero-grid">
           <div>
             <div className="eyebrow fade-in" style={{ "--d": "150ms" }}>AI Implementation Firm · TRAI-aware · DPDP compliant · Bengaluru</div>
-            <h1 style={{ margin: "16px 0" }}>
+            <h1>
               <span className="hw"><span style={{ "--d": "0ms" }}>Every</span></span>{" "}
               <span className="hw"><span style={{ "--d": "100ms" }}>missed</span></span>{" "}
               <span className="hw"><span style={{ "--d": "200ms" }}>call</span></span>{" "}
