@@ -39,7 +39,7 @@ export default function Page() {
         if (!verticalRoles) return null;
 
         return (
-          <section key={v.slug}>
+          <section key={v.slug} id={v.slug}>
             <div className="wrap">
               <div className="shead">
                 <div className="eyebrow">{v.eyebrow}</div>

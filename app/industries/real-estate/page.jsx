@@ -16,6 +16,7 @@ export default function Page() {
         <p className="lead">Developers pour lakhs into Google, Meta, and listing portals — and then the leads call a number that goes unanswered after hours, on weekends, and during launch-day chaos. That buyer doesn&apos;t wait. They call the next project on the list. We fix the leaking bucket.</p>
         <div className="cta-row">
           <Link className="btn btn-primary" href="/contact">Audit my enquiry flow <ArrowRight size={16}/></Link>
+          <Link className="btn btn-ghost" href="/solutions#real-estate">Explore Real Estate Solutions <ArrowRight size={16}/></Link>
         </div>
       </header>
 
@@ -47,7 +48,7 @@ export default function Page() {
             <div className="item" key={t}><b>{t}</b><p>{d}</p></div>
           ))}
         </div>
-        <p className="mut" style={{fontSize:13, marginTop:16}}>Works alongside your existing pre-sales team — the agent handles first response and booking; humans take over for negotiation and closing. Tier 1 (managed) and Tier 2 (owned instance) both available for this vertical. <Link href="/pricing" style={{color:"var(--ember2)"}}>See pricing →</Link></p>
+        <p className="mut" style={{fontSize:13, marginTop:16}}>Works alongside your existing pre-sales team — the agent handles first response and booking; humans take over for negotiation and closing. Tier 1 (managed) and Tier 2 (owned instance) both available for this vertical. <Link href="/pricing" style={{color:"var(--ember2)"}}>See pricing</Link> or <Link href="/solutions#real-estate" style={{color:"var(--ember2)"}}>explore all configuration paths →</Link></p>
       </div></section>
 
       <CTABand title="How many site visits did you miss last weekend?"

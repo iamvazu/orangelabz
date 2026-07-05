@@ -37,25 +37,41 @@ export default function Page() {
           <span className="tag hot">FLAGSHIP VERTICAL</span>
           <h3 style={{marginTop:12}}>Real Estate — Developers &amp; Premium Brokers</h3>
           <p>Millions spent on Google, Meta, and listing portals — then the ad number rings unanswered on a Sunday afternoon and the buyer calls the next project. Our inbound agent answers instantly, books the site visit, and moves the buyer to WhatsApp where Indian real estate actually happens.</p>
-          <Link className="go" href="/industries/real-estate">The full Real Estate blueprint <ArrowRight size={14}/></Link>
+          <div style={{display:"flex", gap:20, flexWrap:"wrap", marginTop:16}}>
+            <Link className="go" href="/industries/real-estate">The full Real Estate blueprint <ArrowRight size={14}/></Link>
+            <Link className="go" style={{color:"var(--ember2)"}} href="/solutions#real-estate">Explore Real Estate Solutions <ArrowRight size={14}/></Link>
+          </div>
         </div>
 
         <div className="grid2">
           <div className="card" id="clinics">
             <h3>Premium Clinics &amp; Diagnostics</h3>
             <p><b style={{color:"var(--bone)"}}>The pain:</b> a patient calling an IVF clinic, dental hospital, or scan centre wants an answer now. If the front desk is busy, they click the next Google Maps result. <b style={{color:"var(--bone)"}}>The micro-conversion:</b> a confirmed consultation slot or home sample collection. <b style={{color:"var(--bone)"}}>The WhatsApp loop:</b> confirmations, location pins, pre-procedure instructions, report PDFs. <b style={{color:"var(--bone)"}}>The structural win:</b> under DPDP, hospitals are rightly paranoid about multi-tenant SaaS — our single-tenant architecture keeps patient data inside their own dedicated AWS Mumbai container.</p>
+            <div style={{display:"flex", gap:20, flexWrap:"wrap", marginTop:16}}>
+              <Link className="go" style={{color:"var(--ember2)"}} href="/solutions#premium-clinics">Explore Clinic Solutions <ArrowRight size={14}/></Link>
+              <Link className="go" style={{color:"var(--ember2)"}} href="/solutions#diagnostics">Explore Diagnostic Solutions <ArrowRight size={14}/></Link>
+            </div>
           </div>
           <div className="card" id="edtech">
             <h3>Test Prep &amp; Study Abroad</h3>
             <p><b style={{color:"var(--bone)"}}>The pain:</b> institutes spend crores on Meta and Google lead forms; anxious parents call directly from the ad, and an enquiry left cold for an hour goes to the competitor. <b style={{color:"var(--bone)"}}>The micro-conversion:</b> a booked diagnostic counseling session or scholarship mock test. <b style={{color:"var(--bone)"}}>The loop:</b> brochures, fee schedules, topper results, mock-test links — with the agent filtering target year, background, and budget before a human counselor ever picks up.</p>
+            <div style={{marginTop:16}}>
+              <Link className="go" style={{color:"var(--ember2)"}} href="/solutions#test-prep">Explore Test Prep &amp; Ed Solutions <ArrowRight size={14}/></Link>
+            </div>
           </div>
           <div className="card" id="industrial">
             <h3>B2B Industrial &amp; Machinery</h3>
             <p><b style={{color:"var(--bone)"}}>The pain:</b> IndiaMART blasts a ₹15-lakh machinery lead to five competitors at once; the vendor who responds in 90 seconds wins, the next-day responder is dead on arrival. <b style={{color:"var(--bone)"}}>The micro-conversion:</b> precise specs extracted into a technical RFQ. <b style={{color:"var(--bone)"}}>The structural win:</b> manufacturers despise SaaS subscriptions but happily invest in capital equipment — our one-time engineering asset model matches exactly how they already buy.</p>
+            <div style={{marginTop:16}}>
+              <Link className="go" style={{color:"var(--ember2)"}} href="/solutions#industrial">Explore B2B Industrial Solutions <ArrowRight size={14}/></Link>
+            </div>
           </div>
           <div className="card" id="auto">
             <h3>Premium Automotive</h3>
             <p><b style={{color:"var(--bone)"}}>The pain:</b> chaotic showroom desks drop calls about test drives, trade-in valuations, and high-margin insurance renewals every day. <b style={{color:"var(--bone)"}}>The micro-conversion:</b> a confirmed home test-drive slot or on-site vehicle evaluation. <b style={{color:"var(--bone)"}}>The loop:</b> digital brochures, on-road price breakdowns, EMI matrices, and RC photo collection for instant trade-in valuation.</p>
+            <div style={{marginTop:16}}>
+              <Link className="go" style={{color:"var(--ember2)"}} href="/contact?vertical=automotive">Request Custom Auto Blueprint <ArrowRight size={14}/></Link>
+            </div>
           </div>
         </div>
       </div></section>
