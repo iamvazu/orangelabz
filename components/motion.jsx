@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function MotionObserver() {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Add 'js' class to root when component mounts client-side
     document.documentElement.classList.add("js");
@@ -21,16 +24,15 @@ export default function MotionObserver() {
       }
     );
 
-    // Track standard elements
+    // Track standard elements on the current page
     const selector = ".card, .item, .step, .agent, .shead, .tier, .own, .roi, .final, [data-rv]";
     const elements = document.querySelectorAll(selector);
     elements.forEach((el) => observer.observe(el));
 
     return () => {
       elements.forEach((el) => observer.unobserve(el));
-      document.documentElement.classList.remove("js");
     };
-  }, []);
+  }, [pathname]); // Re-run the observer setup whenever the page route/pathname changes
 
   return null;
 }
