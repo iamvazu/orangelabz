@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Nav, Footer } from "@/components/site";
 import MotionObserver from "@/components/motion";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   metadataBase: new URL("https://orangelabz.com"),
@@ -36,7 +37,9 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );
 }
+
